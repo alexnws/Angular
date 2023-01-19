@@ -4,8 +4,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.landing-block img {
+  width: 100%;
+}
 
 .landing-links {
+  margin-top: 5%;
   width: 100%;
   text-align: center;
 }

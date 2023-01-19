@@ -15,17 +15,18 @@ export class SingleFaceSnapComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
   ngOnInit() {
-    this.buttonText = 'Oh Snap!';
+    this.buttonText = 'Like';
     const faceSnapId = +this.route.snapshot.params['id'];
     this.faceSnap = this.faceSnapsService.getFaceSnapById(faceSnapId);
   }
+  //Cette méthode permet d'interagir pour liker ou unlike une publication.
   onSnap() {
-    if (this.buttonText === 'Oh Snap!') {
-      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'snap');
-      this.buttonText = 'Oops, unSnap!';
+    if (this.buttonText === 'Like') {
+      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'like');
+      this.buttonText = 'Unlike';
     } else {
-      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'unsnap');
-      this.buttonText = 'Oh Snap!';
+      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'unlike');
+      this.buttonText = 'Like';
     }
   }
 }

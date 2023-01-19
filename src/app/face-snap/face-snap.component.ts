@@ -15,19 +15,21 @@ export class FaceSnapComponent implements OnInit {
 
   @Input() faceSnap!: FaceSnap;
   buttonText!: string;
-
+  //La méthode  ngOnInit() est appelée une fois par instance de component au moment de la création de cette instance.
   ngOnInit() {
-    this.buttonText = 'Oh Snap!';
+    this.buttonText = 'Like';
   }
+  // cette méthode permet d'aimer une publication et/ou de supprimer le j'aime.
   onSnap() {
-    if (this.buttonText === 'Oh Snap!') {
-      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'snap');
-      this.buttonText = 'Oops, unSnap!';
+    if (this.buttonText === 'Like') {
+      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'like');
+      this.buttonText = 'Unlike';
     } else {
-      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'unsnap');
-      this.buttonText = 'Oh Snap!';
+      this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'unlike');
+      this.buttonText = 'Like';
     }
   }
+  //Permet de ce redigirer vers la page publication.
   onViewFaceSnap() {
     this.router.navigateByUrl(`facesnaps/${this.faceSnap.id}`);
   }

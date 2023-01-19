@@ -1,9 +1,9 @@
-<div
-  class="face-snap-card"
-  [ngClass]="{ snapped: buttonText === 'Oops, unSnap!' }"
->
+<div class="face-snap-card" [ngClass]="{ snapped: buttonText === 'Unlike' }">
+  <!--pipe + uppercase permet de changer la police de min titre en majuscule-->
   <h2>{{ faceSnap.title | uppercase }}</h2>
 
   <p>{{ faceSnap.description }}</p>
+
+  <!--click permet de faire une redirection-->
   <button (click)="onViewFaceSnap()">VIEW</button>
 </div>

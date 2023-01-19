@@ -12,6 +12,7 @@ export class LandingPageComponent implements OnInit {
   ngOnInit(): void {}
 
   onContinue() {
+    // un router à été ajouté pour accéder à la page des publications avec une méthode.
     this.router.navigateByUrl('facesnaps');
   }
 }
